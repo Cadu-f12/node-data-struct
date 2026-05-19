@@ -1,4 +1,4 @@
-# Implementação Manual de Lista Encadeada Simples (Singly Linked List)
+# Implementação Manual de Nós simples (Singly Linked List)
 
 Este é um projeto simples em C desenvolvido para praticar o conceito de estruturas de nós de encadeamento único (*single node structures*). O objetivo principal é consolidar o entendimento sobre ponteiros, alocação dinâmica de memória (`malloc` e `free`) e manipulação de nós sem o uso de abstrações de alto nível.
 
