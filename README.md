@@ -34,7 +34,13 @@ Como o projeto está modularizado, você pode incluir o header em seu código pr
 2. Compile o código: Certifique-se de compilar o arquivo fonte do nó junto com o seu main.c:
 
 ```Bash
-gcc <seu_programa_aqui> node.o -o main
+    gcc <seu_programa_aqui> node.o -o main
+```
+
+- *Se o arquivo objeto não funcionar no seu código faça isso*:
+```Bash
+    cd src/
+    gcc -c node.c -o node.o
 ```
 
 3. Instancie os nós: Utilize as funções de criação para instanciar novos nós em tempo de execução.
