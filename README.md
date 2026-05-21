@@ -1,25 +1,42 @@
-# Implementação Manual de Nós simples
+# Implementação de Single Node
 
-Este é um projeto simples em C desenvolvido para praticar o conceito de estruturas de nós de encadeamento único (*single node structures*). O objetivo principal é consolidar o entendimento sobre ponteiros, alocação dinâmica de memória (`malloc` e `free`) e manipulação de nós sem o uso de abstrações de alto nível.
+Este projeto consiste na implementação técnica da unidade fundamental de estruturas dinâmicas: o **Nó (Node)**. Desenvolvido em C (com arquivos `.c` e `.h`), o foco aqui é a manipulação atômica dessa estrutura, explorando a fundo a alocação dinâmica de memória e o uso de ponteiros para referenciamento.
 
----
+## 📌 O que é um Single Node?
 
-## 📌 O que é uma Lista Encadeada Simples?
+Diferente de uma lista encadeada completa, um **Single Node** é a unidade básica (o "átomo") que compõe diversas estruturas de dados. Ele serve como um recipiente que armazena uma informação e possui a capacidade de se conectar a outro elemento, embora, neste projeto, o foco seja a sua criação, inicialização e destruição de forma isolada e segura.
 
-Uma lista encadeada simples é uma estrutura de dados linear onde cada elemento (chamado de **Nó** ou **Node**) contém duas partes:
-1. **Dados:** O valor real armazenado no nó.
-2. **Próximo (Next):** Um ponteiro que aponta para o próximo nó da sequência. O último nó aponta para `NULL`, indicando o fim da lista.
+Um nó é composto por:
+1.  **Dados (Data):** O conteúdo útil armazenado (neste caso, um inteiro).
+2.  **Ponteiro (Next):** O "braço" da estrutura, um ponteiro que permite a conexão futura com outros nós.
 
-![Demonstração de uma Lista Encadeada Simples](https://media.geeksforgeeks.org/wp-content/uploads/20240509162327/Singly-Linked-List-(1).webp)
+![Demonstração de uma estrutura de Nó](https://miro.medium.com/v2/resize:fit:1400/1*7bz9P5GAvWcMcHBfQeNlpQ.jpeg)
 
----
+## 🛠️ Especificações Técnicas
 
-## 🛠️ Estrutura de Código Base
+A implementação foca na robustez da gestão de memória, garantindo que cada nó seja devidamente alocado no *Heap* e liberado após o uso, evitando *memory leaks* (vazamentos de memória).
 
-A estrutura clássica de um nó utilizada neste projeto:
+### Estrutura do Nó (Header `.h`)
 
 ```c
 typedef struct Node {
-    int data;           // Dado armazenado (pode ser alterado para outro tipo)
-    struct Node* next;  // Ponteiro para o próximo nó
+    int data;           // Valor armazenado
+    struct Node* next;  // Ponteiro para o próximo elemento (ou NULL)
 } Node;
+```
+
+## 🚀 Como utilizar
+
+Como o projeto está modularizado, você pode incluir o header em seu código principal:
+
+1. Inclua o header: Adicione ``#include "node.h"`` no seu arquivo principal.
+
+2. Compile o código: Certifique-se de compilar o arquivo fonte do nó junto com o seu main.c:
+
+```Bash
+gcc <seu_programa_aqui> node.o -o main
+```
+
+3. Instancie os nós: Utilize as funções de criação para instanciar novos nós em tempo de execução.
+
+4. Gestão de Memória: Lembre-se sempre de liberar a memória de cada nó individualmente após o uso para manter o programa eficiente.

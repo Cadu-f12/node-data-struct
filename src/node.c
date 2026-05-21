@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "nodo.h"
+#include "node.h"
 
 typedef struct Node_ {
-    int info;
+    int data;
     struct Node_* next;
 } Node;
 
@@ -14,7 +14,7 @@ Node* create_node(int value) {
         printf("ERROR: NODE NOT CREATED");
         return node;
     }
-    node->info = value;
+    node->data = value;
     node->next = NULL;
     return node;
 }
@@ -38,21 +38,21 @@ int set_next(Node* node, Node* node_next) {
     return 1;
 }
 
-int get_info(Node* node) {
+int get_data(Node* node) {
     if (!node) {
         printf("ERROR: NODE IS NULL");
         return 0;
     }
     
-    return node->info;
+    return node->data;
 }
 
-int set_info(Node* node, int value) {
+int set_data(Node* node, int value) {
     if (!node) {
         printf("ERROR: NODE IS NULL");
         return 0;
     }
 
-    node->info = value;
+    node->data = value;
     return 1;
 }
