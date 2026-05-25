@@ -56,3 +56,13 @@ int set_data(Node* node, int value) {
     node->data = value;
     return 1;
 }
+
+int free_double_node(Node* double_node) {
+    if (!double_node) {
+        printf("ERROR: Double_node IS NULL");
+        return 0;
+    }
+    
+    free(double_node);
+    return 1;
+}
